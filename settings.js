@@ -50,8 +50,8 @@ global.etiqueta = '𝙼𝚒𝚔𝚞 𝚡 𝙽𝚎𝚢𝚔𝚘𝚘𝚛'
 global.moneda = '¥enes'
 global.welcom1 = '❍ Edita Con El Comando setwelcome'
 global.welcom2 = '❍ Edita Con El Comando setbye'
-global.banner = ''
-global.avatar = ''
+global.banner = 'https://files.catbox.moe/xicfbv.jpg'
+global.avatar = 'https://files.catbox.moe/z2n6z9.jpg'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
