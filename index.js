@@ -40,8 +40,7 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 //let require = createRequire(megu)
 let { say } = cfonts
 
-console.log(chalk.bold.hex('#C7FF00')(`\n✰ Iniciando Miku x WhatsApp ✰\n`));
-
+console.log(chalk.bold.hex('#25D366')(`\n✰ Iniciando Miku x WhatsApp ✰\n`));
 say('Miku', {
   font: 'block',
   align: 'center',
