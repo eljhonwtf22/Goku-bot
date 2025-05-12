@@ -55,13 +55,13 @@ global.avatar = 'https://files.catbox.moe/z2n6z9.jpg'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.gp1 = ''
-global.comunidad1 = ''
-global.channel = ''
-global.channel2 = ''
+global.gp1 = 'https://chat.whatsapp.com/BCKgflZ3LPT50NpwcFQu91'
+global.comunidad1 = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
+global.channel = 'https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24'
+global.channel2 = 'https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24'
 global.md = ''
-global.correo = ''
-global.cn ='';
+global.correo = 'chinquepapa@gmail.com'
+global.cn ='https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24';
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
