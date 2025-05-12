@@ -18,20 +18,20 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "",
+  "homepage": "https://github.com/Aqua200/Miku.git",
   "author": {
-    "name": "https_(S2)"
+    "name": "Neykoor"
   },
   "repository": {
     "type": "git",
-    "url": "git"
+    "url": "git+https://github.com/Aqua200/Miku.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/Aqua200/Miku.git"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@whiskeysockets/baileys": "",
+    "@whiskeysockets/baileys": "github:ds6/bails",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.2.4",
     "@bochilteam/scraper-sosmed": "^1.0.5",
