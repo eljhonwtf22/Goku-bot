@@ -59,7 +59,7 @@ global.gp1 = 'https://chat.whatsapp.com/BCKgflZ3LPT50NpwcFQu91'
 global.comunidad1 = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
 global.channel = 'https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24'
 global.channel2 = 'https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24'
-global.md = ''
+global.md = 'https://github.com/Aqua200/Miku.git'
 global.correo = 'chinquepapa@gmail.com'
 global.cn ='https://whatsapp.com/channel/0029VazHywx0rGiUAYluYB24';
 
