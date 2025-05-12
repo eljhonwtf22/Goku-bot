@@ -43,9 +43,9 @@ let { say } = cfonts
 console.log(chalk.bold.redBright(`\n✰ Iniciando Miku ✰\n`))
 
 say('Miku', {
-font: 'block',
-align: 'center',
-colors: ['magentaBright']
+  font: 'block',
+  align: 'center',
+  colors: ['cyanBright']
 })
 
 say(`Developed By • Neykoor`, {
