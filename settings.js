@@ -37,13 +37,13 @@ global.sessions = 'Sessions'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = ''
-global.botname = ''
-global.wm = ''
-global.author = ''
-global.dev = ''
-global.textbot = ''
-global.etiqueta = ''
+global.packname = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
+global.botname = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
+global.wm = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
+global.author = 'Neykoor x WhatsApp'
+global.dev = 'Powered By Neykoor'
+global.textbot = 'Miku x Neykoor'
+global.etiqueta = 'Miku x Neykoor'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
