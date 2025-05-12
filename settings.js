@@ -40,10 +40,10 @@ global.sessions = 'Sessions'
 global.packname = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
 global.botname = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
 global.wm = '🦋⃟‌ 𝚖𝚒𝚔𝚞✿࿐'
-global.author = 'Neykoor x WhatsApp'
-global.dev = 'Powered By Neykoor'
-global.textbot = 'Miku x Neykoor'
-global.etiqueta = 'Miku x Neykoor'
+global.author = '𝙽𝚎𝚢𝚔𝚘𝚘𝚛 𝚡 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙'
+global.dev = '𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 𝙽𝚎𝚢𝚔𝚘𝚘𝚛'
+global.textbot = '𝙼𝚒𝚔𝚞 𝚡 𝙽𝚎𝚢𝚔𝚘𝚘𝚛'
+global.etiqueta = '𝙼𝚒𝚔𝚞 𝚡 𝙽𝚎𝚢𝚔𝚘𝚘𝚛'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
