@@ -18,7 +18,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone 
+git clone https://github.com/Aqua200/Miku.git
 ```
 
 ```bash
