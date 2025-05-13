@@ -14,11 +14,9 @@
     "qr": "node index.js qr",
     "code": "node index.js code",
     "test": "node test.js",
-    "test2": "nodemon index.js",
+    "test2": "nodemon index.js", 
     "eslint": "eslint .",
-    "eslintfix": "eslint --fix .",
-    "preinstall": "npm install -g npm@latest",
-    "postinstall": "npm audit fix"
+    "eslintfix": "eslint --fix ."
   },
   "homepage": "https://github.com/Aqua200/Miku",
   "author": {
@@ -50,7 +48,7 @@
     "boxen": "^7.1.1",
     "chalk": "^5.2.0",
     "url-file-size": "^1.0.5-1",
-    "fluid-spotify.js": "^1.0.0",
+    "fluid-spotify.js": "^1.0.0", 
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.18.2",
     "file-type": "^18.0.0",
@@ -75,7 +73,7 @@
     "pino-pretty": "^9.4.0",
     "pdfkit": "^0.13.0",
     "qrcode": "^1.5.1",
-    "sanzy-spotifydl": "^1.0.0",
+    "sanzy-spotifydl": "^1.0.0", 
     "qrcode-terminal": "^0.12.0",
     "similarity": "^1.2.1",
     "g-i-s": "^2.1.6",
