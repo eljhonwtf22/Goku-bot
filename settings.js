@@ -33,7 +33,7 @@ global.vs = '2.2.0'
 global.nameqr = '❥♡ﮩﮩ٨ــﮩـــ𝙷𝚊𝚝𝚜𝚞𝚗𝚎 𝚖𝚒𝚔𝚞❥'
 global.namebot = '❥♡ﮩﮩ٨ــﮩـــ𝙷𝚊𝚝𝚜𝚞𝚗𝚎 𝚖𝚒𝚔𝚞❥'
 global.sessions = 'Sessions'
-
+global.jadi = 'JadiBots' 
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
