@@ -18,13 +18,13 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/Aqua200/Miku",
+  "homepage": "https://github.com/Aqua200/Miku.git",
   "author": {
     "name": "Neykoor"
   },
   "repository": {
     "type": "git",
-    "url": "githttps://github.com/Aqua200/Miku.git"
+    "url": "git+https://github.com/Aqua200/Miku.git"
   },
   "bugs": {
     "url": "https://github.com/Aqua200/Miku/issues"
