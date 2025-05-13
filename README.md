@@ -1,4 +1,4 @@
-***LA BOT TODAVÍA NO ESTA TERMINADA**
+**LA BOT TODAVÍA NO ESTA TERMINADA**
 
 ### **`✧ Click en la imagen para descargar termux ✧`**
 <a
