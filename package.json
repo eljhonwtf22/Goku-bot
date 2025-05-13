@@ -1,34 +1,15 @@
 {
   "name": "Miku",
   "version": "6.0.0",
-  "description": "Una Botsita simple",
+  "description": "Sou una botsita simple para WhatsApp y Termux",
   "main": "index.js",
   "type": "module",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "preinstall": "npm config set sharp_binary_host \"https://npm.taobao.org/mirrors/sharp\" && npm config set sharp_libvips_binary_host \"https://npm.taobao.org/mirrors/sharp-libvips\"",
+    "postinstall": "npm rebuild --build-from-source sharp"
   },
-  "keywords": [
-    "termux-whatsapp-bot",
-    "whatsapp-bot",
-    "whatsapp",
-    "js-whatsapp",
-    "whatsapp",
-    "wabot-aq"
-  ],
-  "homepage": "https://github.com/Aqua200/Miku",
-  "author": "Neykoor",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aqua200/Miku.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Aqua200/Miku/issues"
-  },
-  "license": "GPL-3.0-or-later",
   "dependencies": {
     "@adiwajshing/baileys": "npm:@fizzxydev/baileys-pro",
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -52,9 +33,8 @@
     "crypto-js": "^4.2.0",
     "didyoumean": "^1.2.2",
     "express": "^4.18.1",
-    "ffmpeg": "*",
     "file-type": "^18.5.0",
-    "fluent-ffmpeg": "*",
+    "fluent-ffmpeg": "^2.1.2",
     "form-data": "^4.0.0",
     "formdata-node": "^5.0.0",
     "got": "12.5.3",
@@ -74,12 +54,11 @@
     "node-fetch": "^3.3.2",
     "node-gtts": "^1.2.0",
     "node-os-utils": "^1.3.6",
-    "perf_hooks": "^0.0.1",
-    "performance-now": "^2.1.0",
     "pino": "^8.11.0",
     "platform": "^1.3.6",
     "qs": "^6.11.0",
     "readline": "^1.3.0",
+    "sharp": "^0.32.6",
     "similarity": "^1.2.1",
     "socket.io": "^4.8.1",
     "syntax-error": "^1.4.0",
@@ -91,5 +70,21 @@
     "xmldom": "^0.6.0",
     "yargs": "^17.7.1",
     "yt-search": "^2.10.4"
-  }
+  },
+  "keywords": [
+    "termux-whatsapp-bot",
+    "whatsapp-bot",
+    "whatsapp",
+    "js-whatsapp"
+  ],
+  "homepage": "https://github.com/Aqua200/Miku",
+  "author": "Neykoor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aqua200/Miku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aqua200/Miku/issues"
+  },
+  "license": "GPL-3.0-or-later"
 }
