@@ -201,7 +201,7 @@ console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄�
 try {
 if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathStarlights)}@s.whatsapp.net`, {text : '*SESIÓN PENDIENTE*\n\n> *INTENTÉ NUEVAMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
 } catch (error) {
-console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathYukiJadiBot)}`))
+console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathStarlights)}`))
 }
 fs.rmdirSync(pathStarlights, { recursive: true })
 }
