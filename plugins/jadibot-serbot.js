@@ -53,8 +53,8 @@ return m.reply(`${emoji2} No se han encontrado espacios para *Sub-Bots* disponib
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let id = `${who.split`@`[0]}`  //conn.getName(who)
 let Starlights = path.join(`./${jadi}/`, id)
-if (!fs.existsSync(pathStarlights)){
-fs.mkdirSync(pathStarlights, { recursive: true })
+if (!fs.existsSync(Starlights)){
+fs.mkdirSync(Starlights, { recursive: true })
 }
 Starlightsptions.pathStarlights = pathStarlights
 Starlightsptions.m = m
