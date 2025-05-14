@@ -59,7 +59,7 @@ fs.mkdirSync(pathStarlights, { recursive: true })
 Starlightsptions.pathStarlights = pathStarlights
 Starlightsptions.m = m
 Starlightsptions.conn = conn
-Starlightstions.args = args
+Starlightsptions.args = args
 Starlightsptions.usedPrefix = usedPrefix
 Starlightsptions.command = command
 Starlightsptions.fromCommand = true
