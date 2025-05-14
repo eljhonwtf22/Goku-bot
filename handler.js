@@ -150,6 +150,8 @@ global.db.data.chats[m.chat] = {}
 if (chat) {
 if (!('isBanned' in chat))
 chat.isBanned = false
+if (!('primaryBot' in chat))
+chat.primaryBot = null
 if (!('sAutoresponder' in chat))
 chat.sAutoresponder = ''
 if (!('welcome' in chat))
@@ -204,6 +206,7 @@ antiBot2: false,
 modoadmin: false,
 antiLink: true,
 antifake: false,
+primaryBot: null,
 reaction: false,
 nsfw: false,
 expired: 0, 
