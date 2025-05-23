@@ -33,20 +33,8 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
       chat.welcome = isEnable
       break
 
-    // case 'antilag': // <--- ELIMINADO
-    //   if (!m.isGroup) { // <--- ELIMINADO
-    //     if (!isOwner) { // <--- ELIMINADO
-    //       global.dfail('group', m, conn) // <--- ELIMINADO
-    //       throw false // <--- ELIMINADO
-    //     } // <--- ELIMINADO
-    //   } else if (!isAdmin) { // <--- ELIMINADO
-    //     global.dfail('admin', m, conn) // <--- ELIMINADO
-    //     throw false // <--- ELIMINADO
-    //   } // <--- ELIMINADO
-    //   chat.antiLag = isEnable // <--- ELIMINADO
-    //   break   // <--- ELIMINADO
-
-    case 'antiprivado':
+    
+ case 'antiprivado':
     case 'antiprivate':
       isAll = true
       if (!isOwner) {
