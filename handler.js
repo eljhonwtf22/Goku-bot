@@ -1,5 +1,5 @@
 import { smsg } from './lib/simple.js'
-import { format } from 'util' 
+import { format } from 'util'
 import { fileURLToPath } from 'url'
 import path, { join } from 'path'
 import { unwatchFile, watchFile } from 'fs'
@@ -23,7 +23,7 @@ let m = chatUpdate.messages[chatUpdate.messages.length - 1]
 if (!m)
 return;
 if (global.db.data == null)
-await global.loadDatabase()       
+await global.loadDatabase()
 try {
 m = smsg(this, m) || m
 if (!m)
@@ -33,7 +33,7 @@ m.coin = false
 try {
 let user = global.db.data.users[m.sender]
 if (typeof user !== 'object')
-  
+
 global.db.data.users[m.sender] = {}
 if (user) {
 if (!isNumber(user.exp))
@@ -142,7 +142,7 @@ bank: 0,
 level: 0,
 role: 'Nuv',
 premium: false,
-premiumTime: 0,                 
+premiumTime: 0,
 }
 let chat = global.db.data.chats[m.chat]
 if (typeof chat !== 'object')
@@ -172,8 +172,8 @@ if (!('antiBot' in chat))
 chat.antiBot = false
 if (!('antiBot2' in chat))
 chat.antiBot2 = false
-if (!('modoadmin' in chat))                     
-chat.modoadmin = false   
+if (!('modoadmin' in chat))
+chat.modoadmin = false
 if (!('antiLink' in chat))
 chat.antiLink = true
 if (!('reaction' in chat))
@@ -186,9 +186,9 @@ if (!('delete' in chat))
 chat.delete = false
 if (!isNumber(chat.expired))
 chat.expired = 0
-if (!('antiLag' in chat))
+if (!('antiLag' in chat)) // Initialization for antiLag still here, harmless
 chat.antiLag = false
-if (!('per' in chat))
+if (!('per' in chat)) // Initialization for per still here, harmless
 chat.per = []
 } else
 global.db.data.chats[m.chat] = {
@@ -209,9 +209,9 @@ antifake: false,
 primaryBot: null,
 reaction: false,
 nsfw: false,
-expired: 0, 
-antiLag: false,
-per: [],
+expired: 0,
+antiLag: false, // Initialization for antiLag still here, harmless
+per: [], // Initialization for per still here, harmless
 }
 var settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -232,15 +232,15 @@ status: 0
 } catch (e) {
 console.error(e)
 }
-const mainBot = global.conn.user.jid
-const chat = global.db.data.chats[m.chat] || {}
-const isSubbs = chat.antiLag === true
-const allowedBots = chat.per || []
-if (!allowedBots.includes(mainBot)) allowedBots.push(mainBot)
-const isAllowed = allowedBots.includes(this.user.jid)
-if (isSubbs && !isAllowed) 
-return
-    
+// const mainBot = global.conn.user.jid // REMOVED ANTI-LAG RELATED
+// const chat_antilag_lookup = global.db.data.chats[m.chat] || {} // Renamed to avoid conflict if original 'chat' was intended for this scope
+// const isSubbs = chat_antilag_lookup.antiLag === true // REMOVED ANTI-LAG RELATED
+// const allowedBots = chat_antilag_lookup.per || [] // REMOVED ANTI-LAG RELATED
+// if (!allowedBots.includes(mainBot)) allowedBots.push(mainBot) // REMOVED ANTI-LAG RELATED
+// const isAllowed = allowedBots.includes(this.user.jid) // REMOVED ANTI-LAG RELATED
+// if (isSubbs && !isAllowed) // REMOVED ANTI-LAG RELATED
+// return // REMOVED ANTI-LAG RELATED
+
 if (opts['nyimak'])  return
 if (!m.fromMe && opts['self'])  return
 if (opts['swonly'] && m.chat !== 'status@broadcast')  return
@@ -303,7 +303,7 @@ continue
 }
 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 let _prefix = plugin.customPrefix ? plugin.customPrefix : conn.prefix ? conn.prefix : global.prefix
-let match = (_prefix instanceof RegExp ? 
+let match = (_prefix instanceof RegExp ?
 [[_prefix.exec(m.text), _prefix]] :
 Array.isArray(_prefix) ?
 _prefix.map(p => {
@@ -346,13 +346,13 @@ let _args = noPrefix.trim().split` `.slice(1)
 let text = _args.join` `
 command = (command || '').toLowerCase()
 let fail = plugin.fail || global.dfail
-let isAccept = plugin.command instanceof RegExp ? 
+let isAccept = plugin.command instanceof RegExp ?
                     plugin.command.test(command) :
                     Array.isArray(plugin.command) ?
-                        plugin.command.some(cmd => cmd instanceof RegExp ? 
+                        plugin.command.some(cmd => cmd instanceof RegExp ?
                             cmd.test(command) :
 cmd === command) :
-typeof plugin.command === 'string' ? 
+typeof plugin.command === 'string' ?
 plugin.command === command :
 false
 
@@ -368,7 +368,7 @@ if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
 if (!['grupo-unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner) return
-if (name != 'grupo-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'grupo-delete.js' && chat?.isBanned && !isROwner) return 
+if (name != 'grupo-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'grupo-delete.js' && chat?.isBanned && !isROwner) return
 if (user.antispam > 2) return
 if (m.text && user.banned && !isROwner) {
 m.reply(`《✦》Estas baneado/a, no puedes usar comandos en este bot!\n\n${user.bannedReason ? `✰ *Motivo:* ${user.bannedReason}` : '✰ *Motivo:* Sin Especificar'}\n\n> ✧ Si este Bot es cuenta oficial y tiene evidencia que respalde que este mensaje es un error, puedes exponer tu caso con un moderador.`)
@@ -378,49 +378,50 @@ return
 
 if (user.antispam2 && isROwner) return
 let time = global.db.data.users[m.sender].spam + 3000
-if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ]`) 
+if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ]`)
 global.db.data.users[m.sender].spam = new Date * 1
 
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
-let chat = global.db.data.chats[m.chat]
-let user = global.db.data.users[m.sender]
+let chat = global.db.data.chats[m.chat] // This 'chat' is fine, it's scoped to this block
+let user = global.db.data.users[m.sender] // This 'user' is fine
 let setting = global.db.data.settings[this.user.jid]
 if (name != 'grupo-unbanchat.js' && chat?.isBanned)
-return 
+return
 if (name != 'owner-unbanuser.js' && user?.banned)
 return
 }}
-let hl = _prefix 
-let adminMode = global.db.data.chats[m.chat].modoadmin
+let hl = _prefix
+let chat_modoadmin_lookup = global.db.data.chats[m.chat] || {}; // Ensure this lookup doesn't fail if chat is undefined
+let adminMode = chat_modoadmin_lookup.modoadmin
 let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
-if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
-if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { 
+if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return
+if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) {
 fail('owner', m, this)
 continue
 }
-if (plugin.rowner && !isROwner) { 
+if (plugin.rowner && !isROwner) {
 fail('rowner', m, this)
 continue
 }
-if (plugin.owner && !isOwner) { 
+if (plugin.owner && !isOwner) {
 fail('owner', m, this)
 continue
 }
-if (plugin.mods && !isMods) { 
+if (plugin.mods && !isMods) {
 fail('mods', m, this)
 continue
 }
-if (plugin.premium && !isPrems) { 
+if (plugin.premium && !isPrems) {
 fail('premium', m, this)
 continue
 }
-if (plugin.group && !m.isGroup) { 
+if (plugin.group && !m.isGroup) {
 fail('group', m, this)
 continue
-} else if (plugin.botAdmin && !isBotAdmin) { 
+} else if (plugin.botAdmin && !isBotAdmin) {
 fail('botAdmin', m, this)
 continue
-} else if (plugin.admin && !isAdmin) { 
+} else if (plugin.admin && !isAdmin) {
 fail('admin', m, this)
 continue
 }
@@ -428,12 +429,12 @@ if (plugin.private && m.isGroup) {
 fail('private', m, this)
 continue
 }
-if (plugin.register == true && _user.registered == false) { 
+if (plugin.register == true && _user.registered == false) {
 fail('unreg', m, this)
 continue
 }
 m.isCommand = true
-let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 
+let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17
 if (xp > 200)
 m.reply('chirrido -_-')
 else
@@ -443,7 +444,7 @@ conn.reply(m.chat, `❮✦❯ Se agotaron tus ${moneda}`, m)
 continue
 }
 if (plugin.level > _user.level) {
-conn.reply(m.chat, `❮✦❯ Se requiere el nivel: *${plugin.level}*\n\n• Tu nivel actual es: *${_user.level}*\n\n• Usa este comando para subir de nivel:\n*${usedPrefix}levelup*`, m)       
+conn.reply(m.chat, `❮✦❯ Se requiere el nivel: *${plugin.level}*\n\n• Tu nivel actual es: *${_user.level}*\n\n• Usa este comando para subir de nivel:\n*${usedPrefix}levelup*`, m)
 continue
 }
 let extra = {
@@ -543,12 +544,13 @@ stat.lastSuccess = now
 
 try {
 if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
-} catch (e) { 
+} catch (e) {
 console.log(m, m.quoted, e)}
-let settingsREAD = global.db.data.settings[this.user.jid] || {}  
+let settingsREAD = global.db.data.settings[this.user.jid] || {}
 if (opts['autoread']) await this.readMessages([m.key])
 
-if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yuki|a|s)/gi)) {
+let chat_reaction_lookup = global.db.data.chats[m.chat] || {}; // Ensure this lookup doesn't fail
+if (chat_reaction_lookup.reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yuki|a|s)/gi)) {
 let emot = pickRandom(["🍟", "😃", "😄", "😁", "😆", "🍓", "😅", "😂", "🤣", "🥲", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "🌺", "🌸", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🌟", "🤓", "😎", "🥸", "🤩", "🥳", "😏", "💫", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😶‍🌫️", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🫣", "🤭", "🤖", "🍭", "🤫", "🫠", "🤥", "😶", "📇", "😐", "💧", "😑", "🫨", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😮‍💨", "😵", "😵‍💫", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👺", "🧿", "🌩", "👻", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🫶", "👍", "✌️", "🙏", "🫵", "🤏", "🤌", "☝️", "🖕", "🙏", "🫵", "🫂", "🐱", "🤹‍♀️", "🤹‍♂️", "🗿", "✨", "⚡", "🔥", "🌈", "🩷", "❤️", "🧡", "💛", "💚", "🩵", "💙", "💜", "🖤", "🩶", "🤍", "🤎", "💔", "❤️‍🔥", "❤️‍🩹", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "🚩", "👊", "⚡️", "💋", "🫰", "💅", "👑", "🐣", "🐤", "🐈"])
 if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 }
@@ -562,13 +564,13 @@ let user2 = m.pushName || 'Anónimo'
 let verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom()
 
 const msg = {
-rowner: `『✦』El comando *${comando}* solo puede ser usado por los creadores del bot.`, 
-owner: `『✦』El comando *${comando}* solo puede ser usado por los desarrolladores del bot.`, 
-mods: `『✦』El comando *${comando}* solo puede ser usado por los moderadores del bot.`, 
-premium: `『✦』El comando *${comando}* solo puede ser usado por los usuarios premium.`, 
+rowner: `『✦』El comando *${comando}* solo puede ser usado por los creadores del bot.`,
+owner: `『✦』El comando *${comando}* solo puede ser usado por los desarrolladores del bot.`,
+mods: `『✦』El comando *${comando}* solo puede ser usado por los moderadores del bot.`,
+premium: `『✦』El comando *${comando}* solo puede ser usado por los usuarios premium.`,
 group: `『✦』El comando *${comando}* solo puede ser usado en grupos.`,
 private: `『✦』El comando *${comando}* solo puede ser usado al chat privado del bot.`,
-admin: `『✦』El comando *${comando}* solo puede ser usado por los administradores del grupo.`, 
+admin: `『✦』El comando *${comando}* solo puede ser usado por los administradores del grupo.`,
 botAdmin: `『✦』Para ejecutar el comando *${comando}* debo ser administrador del grupo.`,
 unreg: `『✦』El comando *${comando}* solo puede ser usado por los usuarios registrado, registrate usando:\n> » #${verifyaleatorio} ${user2}.${edadaleatoria}`,
 restrict: `『✦』Esta caracteristica está desactivada.`
