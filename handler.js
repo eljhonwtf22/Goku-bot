@@ -186,10 +186,7 @@ if (!('delete' in chat))
 chat.delete = false
 if (!isNumber(chat.expired))
 chat.expired = 0
-if (!('antiLag' in chat)) // Initialization for antiLag still here, harmless
-chat.antiLag = false
-if (!('per' in chat)) // Initialization for per still here, harmless
-chat.per = []
+// Líneas de antiLag y per eliminadas de aquí
 } else
 global.db.data.chats[m.chat] = {
 isBanned: false,
@@ -210,8 +207,7 @@ primaryBot: null,
 reaction: false,
 nsfw: false,
 expired: 0,
-antiLag: false, // Initialization for antiLag still here, harmless
-per: [], // Initialization for per still here, harmless
+// Líneas de antiLag y per eliminadas de aquí
 }
 var settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -232,14 +228,8 @@ status: 0
 } catch (e) {
 console.error(e)
 }
-// const mainBot = global.conn.user.jid // REMOVED ANTI-LAG RELATED
-// const chat_antilag_lookup = global.db.data.chats[m.chat] || {} // Renamed to avoid conflict if original 'chat' was intended for this scope
-// const isSubbs = chat_antilag_lookup.antiLag === true // REMOVED ANTI-LAG RELATED
-// const allowedBots = chat_antilag_lookup.per || [] // REMOVED ANTI-LAG RELATED
-// if (!allowedBots.includes(mainBot)) allowedBots.push(mainBot) // REMOVED ANTI-LAG RELATED
-// const isAllowed = allowedBots.includes(this.user.jid) // REMOVED ANTI-LAG RELATED
-// if (isSubbs && !isAllowed) // REMOVED ANTI-LAG RELATED
-// return // REMOVED ANTI-LAG RELATED
+
+// Sección de lógica anti-lag completamente eliminada
 
 if (opts['nyimak'])  return
 if (!m.fromMe && opts['self'])  return
@@ -382,8 +372,8 @@ if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[
 global.db.data.users[m.sender].spam = new Date * 1
 
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
-let chat = global.db.data.chats[m.chat] // This 'chat' is fine, it's scoped to this block
-let user = global.db.data.users[m.sender] // This 'user' is fine
+let chat = global.db.data.chats[m.chat]
+let user = global.db.data.users[m.sender]
 let setting = global.db.data.settings[this.user.jid]
 if (name != 'grupo-unbanchat.js' && chat?.isBanned)
 return
@@ -391,8 +381,8 @@ if (name != 'owner-unbanuser.js' && user?.banned)
 return
 }}
 let hl = _prefix
-let chat_modoadmin_lookup = global.db.data.chats[m.chat] || {}; // Ensure this lookup doesn't fail if chat is undefined
-let adminMode = chat_modoadmin_lookup.modoadmin
+let chatDB = global.db.data.chats[m.chat] || {}
+let adminMode = chatDB.modoadmin
 let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
 if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return
 if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) {
@@ -549,8 +539,8 @@ console.log(m, m.quoted, e)}
 let settingsREAD = global.db.data.settings[this.user.jid] || {}
 if (opts['autoread']) await this.readMessages([m.key])
 
-let chat_reaction_lookup = global.db.data.chats[m.chat] || {}; // Ensure this lookup doesn't fail
-if (chat_reaction_lookup.reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yuki|a|s)/gi)) {
+let chatDataForReaction = global.db.data.chats[m.chat] || {};
+if (chatDataForReaction.reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yuki|a|s)/gi)) {
 let emot = pickRandom(["🍟", "😃", "😄", "😁", "😆", "🍓", "😅", "😂", "🤣", "🥲", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "🌺", "🌸", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🌟", "🤓", "😎", "🥸", "🤩", "🥳", "😏", "💫", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😶‍🌫️", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🫣", "🤭", "🤖", "🍭", "🤫", "🫠", "🤥", "😶", "📇", "😐", "💧", "😑", "🫨", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😮‍💨", "😵", "😵‍💫", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👺", "🧿", "🌩", "👻", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🫶", "👍", "✌️", "🙏", "🫵", "🤏", "🤌", "☝️", "🖕", "🙏", "🫵", "🫂", "🐱", "🤹‍♀️", "🤹‍♂️", "🗿", "✨", "⚡", "🔥", "🌈", "🩷", "❤️", "🧡", "💛", "💚", "🩵", "💙", "💜", "🖤", "🩶", "🤍", "🤎", "💔", "❤️‍🔥", "❤️‍🩹", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "🚩", "👊", "⚡️", "💋", "🫰", "💅", "👑", "🐣", "🐤", "🐈"])
 if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 }
