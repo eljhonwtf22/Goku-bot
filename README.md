@@ -20,7 +20,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/Aqua200/Miku.git
+git clone https://github.com/eljhonwtf22/Goku-bot.git
 ```
 
 ```bash
